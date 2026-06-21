@@ -2,9 +2,10 @@ package DS.LinkedLists;
 
 import DS.LinkedLists.Helper.ListNode;
 
+//Leet Code 19. Remove Nth Node From End of List
 public class RemoveNthFrombehind {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if(head == null){
+        if (head == null) {
             return head;
         }
 
@@ -14,11 +15,11 @@ public class RemoveNthFrombehind {
         ListNode ahead = dummy;
         ListNode behind = dummy;
 
-        for(int i=0;i<=n;i++){
+        for (int i = 0; i <= n; i++) {
             ahead = ahead.next;
         }
 
-        while(ahead!=null){
+        while (ahead != null) {
             ahead = ahead.next;
             behind = behind.next;
         }

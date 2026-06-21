@@ -2,6 +2,7 @@ package DS.LinkedLists;
 
 import DS.LinkedLists.Helper.ListNode;
 
+//Leet Code 876. Middle of the Linked List
 public class MiddleOfLinkedList {
     public ListNode middleNode(ListNode head) {
         if (head == null)

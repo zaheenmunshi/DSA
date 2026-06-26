@@ -58,3 +58,8 @@ javac DS/LinkedLists/*.java DS/LinkedLists/Helper/*.java
 
 More topics will be added as separate folders under `DS/` (e.g. arrays, stacks,
 trees, graphs), each following the same one-file-per-problem convention.
+
+## Note
+
+The documentation in this repository — this README and the JavaDoc comments in
+the source files — was generated with the help of AI.

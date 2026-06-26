@@ -15,7 +15,7 @@ DSA/
         ├── LinkedListCycle.java            # LC 141
         ├── MiddleOfLinkedList.java         # LC 876
         ├── RemoveNthFrombehind.java        # LC 19
-        ├── CopyListWithRandomPointer.java  # LC 138 (in progress)
+        ├── CopyListWithRandomPointer.java  # LC 138
         └── Helper/
             ├── ListNode.java               # singly linked list node (val, next)
             └── Node.java                   # node with an extra random pointer
@@ -29,7 +29,7 @@ package).
 | #   | Problem                                                                                  | Difficulty | Topic       | File                                                              | Approach                          | Time | Space | Status         |
 | --- | ---------------------------------------------------------------------------------------- | ---------- | ----------- | ---------------------------------------------------------------- | --------------------------------- | ---- | ----- | -------------- |
 | 19  | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Medium     | Linked List | [RemoveNthFrombehind.java](DS/LinkedLists/RemoveNthFrombehind.java)             | Two pointers + dummy node         | O(n) | O(1)  | ✅ Done        |
-| 138 | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)       | Medium     | Linked List | [CopyListWithRandomPointer.java](DS/LinkedLists/CopyListWithRandomPointer.java) | —                                 | —    | —     | 🚧 In progress |
+| 138 | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)       | Medium     | Linked List | [CopyListWithRandomPointer.java](DS/LinkedLists/CopyListWithRandomPointer.java) | Interweave clones, then split     | O(n) | O(1)  | ✅ Done        |
 | 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)                               | Easy       | Linked List | [LinkedListCycle.java](DS/LinkedLists/LinkedListCycle.java)                     | Floyd's cycle detection (fast/slow) | O(n) | O(1)  | ✅ Done        |
 | 876 | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)               | Easy       | Linked List | [MiddleOfLinkedList.java](DS/LinkedLists/MiddleOfLinkedList.java)               | Fast/slow pointers                | O(n) | O(1)  | ✅ Done        |
 

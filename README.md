@@ -14,7 +14,7 @@ DSA/
     ├── LinkedLists/
     │   ├── LinkedListCycle.java            # LC 141
     │   ├── MiddleOfLinkedList.java         # LC 876
-    │   ├── RemoveNthFrombehind.java        # LC 19
+    │   ├── RemoveNthNodeFromEnd.java       # LC 19
     │   ├── CopyListWithRandomPointer.java  # LC 138
     │   └── Helper/
     │       ├── ListNode.java               # singly linked list node (val, next)
@@ -32,7 +32,7 @@ and `DS.BinarySearch` packages).
 
 | #   | Problem                                                                                  | Difficulty | Topic         | File                                                              | Approach                          | Time      | Space | Status         |
 | --- | ---------------------------------------------------------------------------------------- | ---------- | ------------- | ---------------------------------------------------------------- | --------------------------------- | --------- | ----- | -------------- |
-| 19  | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Medium     | Linked List   | [RemoveNthFrombehind.java](DS/LinkedLists/RemoveNthFrombehind.java)             | Two pointers + dummy node         | O(n)      | O(1)  | ✅ Done        |
+| 19  | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Medium     | Linked List   | [RemoveNthNodeFromEnd.java](DS/LinkedLists/RemoveNthNodeFromEnd.java)             | Two pointers + dummy node         | O(n)      | O(1)  | ✅ Done        |
 | 35  | [Search Insert Position](https://leetcode.com/problems/search-insert-position/)                     | Easy       | Binary Search | [SearchInsertPosition.java](DS/BinarySearch/SearchInsertPosition.java)          | Binary search; return `left` on miss | O(log n) | O(1)  | ✅ Done        |
 | 138 | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)       | Medium     | Linked List   | [CopyListWithRandomPointer.java](DS/LinkedLists/CopyListWithRandomPointer.java) | Interweave clones, then split     | O(n)      | O(1)  | ✅ Done        |
 | 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)                               | Easy       | Linked List   | [LinkedListCycle.java](DS/LinkedLists/LinkedListCycle.java)                     | Floyd's cycle detection (fast/slow) | O(n)    | O(1)  | ✅ Done        |

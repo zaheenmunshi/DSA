@@ -10,7 +10,7 @@ import DS.LinkedLists.Helper.ListNode;
  *
  * @see <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Problem 19</a>
  */
-public class RemoveNthFrombehind {
+public class RemoveNthNodeFromEnd {
     /**
      * Removes the n-th node from the end in a single pass using two pointers and
      * a dummy node. The {@code ahead} pointer is advanced {@code n + 1} steps so

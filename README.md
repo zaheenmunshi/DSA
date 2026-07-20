@@ -19,6 +19,8 @@ DSA/
 │   │   │   └── LC704BinarySearch.java
 │   │   ├── Graph/
 │   │   │   ├── LC200NumberOfIslands.java
+│   │   │   ├── LC207CourseSchedule.java
+│   │   │   ├── LC695MaxAreaOfIsland.java
 │   │   │   └── LC1971FindIfPathExistsInGraph.java
 │   │   └── LinkedLists/
 │   │       ├── LC19RemoveNthNodeFromEnd.java
@@ -35,6 +37,8 @@ DSA/
 │       │   └── LC704BinarySearchTest.java
 │       ├── Graph/
 │       │   ├── LC200NumberOfIslandsTest.java
+│       │   ├── LC207CourseScheduleTest.java
+│       │   ├── LC695MaxAreaOfIslandTest.java
 │       │   └── LC1971FindIfPathExistsInGraphTest.java
 │       └── LinkedList/
 │           ├── LC19RemoveNthNodeFromEndTest.java
@@ -52,6 +56,8 @@ DSA/
 | 138  | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)                   | Medium     | Linked List   | [LC138CopyListWithRandomPointer.java](src/main/java/DS/LinkedLists/LC138CopyListWithRandomPointer.java)     | Interweave clones, then split       | O(n)       | O(1)   | ✅ Done |
 | 141  | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)                                           | Easy       | Linked List   | [LC141LinkedListCycle.java](src/main/java/DS/LinkedLists/LC141LinkedListCycle.java)                         | Floyd's cycle detection (fast/slow) | O(n)       | O(1)   | ✅ Done |
 | 200  | [Number of Islands](https://leetcode.com/problems/number-of-islands/)                                           | Medium     | Graph         | [LC200NumberOfIslands.java](src/main/java/DS/Graph/LC200NumberOfIslands.java)                               | DFS flood fill                      | O(m*n)     | O(m*n) | ✅ Done |
+| 207  | [Course Schedule](https://leetcode.com/problems/course-schedule/)                                               | Medium     | Graph         | [LC207CourseSchedule.java](src/main/java/DS/Graph/LC207CourseSchedule.java)                                 | Kahn's topological sort (BFS)       | O(V+E)     | O(V+E) | ✅ Done |
+| 695  | [Max Area of Island](https://leetcode.com/problems/max-area-of-island/)                                         | Medium     | Graph         | [LC695MaxAreaOfIsland.java](src/main/java/DS/Graph/LC695MaxAreaOfIsland.java)                               | DFS flood fill, track max area      | O(m*n)     | O(m*n) | ✅ Done |
 | 367  | [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)                                     | Easy       | Binary Search | [LC367ValidPerfectSquare.java](src/main/java/DS/BinarySearch/LC367ValidPerfectSquare.java)                  | Binary search on `[1, num/2]`       | O(log n)   | O(1)   | ✅ Done |
 | 704  | [Binary Search](https://leetcode.com/problems/binary-search/)                                                   | Easy       | Binary Search | [LC704BinarySearch.java](src/main/java/DS/BinarySearch/LC704BinarySearch.java)                              | Classic binary search               | O(log n)   | O(1)   | ✅ Done |
 | 876  | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)                           | Easy       | Linked List   | [LC876MiddleOfLinkedList.java](src/main/java/DS/LinkedLists/LC876MiddleOfLinkedList.java)                   | Fast/slow pointers                  | O(n)       | O(1)   | ✅ Done |

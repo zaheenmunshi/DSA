@@ -1,4 +1,4 @@
-package tests.LinkedList;
+package DS.LinkedList;
 
 import DS.LinkedLists.LC19RemoveNthNodeFromEnd;
 import DS.LinkedLists.Helper.ListNode;

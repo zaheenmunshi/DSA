@@ -1,4 +1,4 @@
-package tests.LinkedList;
+package DS.LinkedList;
 
 import DS.LinkedLists.LC876MiddleOfLinkedList;
 import DS.LinkedLists.Helper.ListNode;

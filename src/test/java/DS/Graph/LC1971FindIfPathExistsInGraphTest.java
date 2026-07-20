@@ -1,4 +1,4 @@
-package tests.Graph;
+package DS.Graph;
 
 import DS.Graph.LC1971FindIfPathExistsInGraph;
 import org.junit.jupiter.api.BeforeEach;

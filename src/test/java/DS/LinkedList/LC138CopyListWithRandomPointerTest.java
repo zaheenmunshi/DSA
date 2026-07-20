@@ -1,4 +1,4 @@
-package tests.LinkedList;
+package DS.LinkedList;
 
 import DS.LinkedLists.LC138CopyListWithRandomPointer;
 import DS.LinkedLists.Helper.Node;

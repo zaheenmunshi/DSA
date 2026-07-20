@@ -1,4 +1,4 @@
-package tests.BinarySearch;
+package DS.BinarySearch;
 
 import DS.BinarySearch.LC367ValidPerfectSquare;
 import org.junit.jupiter.api.BeforeEach;

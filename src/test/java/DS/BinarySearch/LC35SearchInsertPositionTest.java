@@ -1,4 +1,4 @@
-package tests.BinarySearch;
+package DS.BinarySearch;
 
 import DS.BinarySearch.LC35SearchInsertPosition;
 import org.junit.jupiter.api.BeforeEach;

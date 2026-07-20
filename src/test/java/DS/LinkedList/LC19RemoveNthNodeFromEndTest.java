@@ -4,7 +4,7 @@ import DS.LinkedLists.LC19RemoveNthNodeFromEnd;
 import DS.LinkedLists.Helper.ListNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class LC19RemoveNthNodeFromEndTest {
 

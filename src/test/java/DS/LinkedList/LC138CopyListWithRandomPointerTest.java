@@ -4,7 +4,10 @@ import DS.LinkedLists.LC138CopyListWithRandomPointer;
 import DS.LinkedLists.Helper.Node;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 class LC138CopyListWithRandomPointerTest {
 

@@ -1,25 +1,28 @@
 package tests.BinarySearch;
 
 import DS.BinarySearch.LC704BinarySearch;
-import tests.TestSupport;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-/** Tests for {@link LC704BinarySearch} (LeetCode 704). */
-public class LC704BinarySearchTest {
-    public static void main(String[] args) {
-        TestSupport t = new TestSupport("LC704 Binary Search");
-        LC704BinarySearch s = new LC704BinarySearch();
+class LC704BinarySearchTest {
 
-        int[] nums = {-1, 0, 3, 5, 9, 12};
-        t.checkEquals("target present (middle)", 4, s.search(nums, 9));
-        t.checkEquals("target at first index", 0, s.search(nums, -1));
-        t.checkEquals("target at last index", 5, s.search(nums, 12));
-        t.checkEquals("target absent (too small)", -1, s.search(nums, -5));
-        t.checkEquals("target absent (too large)", -1, s.search(nums, 20));
-        t.checkEquals("target absent (within range)", -1, s.search(nums, 2));
-        t.checkEquals("single element found", 0, s.search(new int[]{5}, 5));
-        t.checkEquals("single element not found", -1, s.search(new int[]{5}, 3));
-        t.checkEquals("empty array", -1, s.search(new int[]{}, 1));
+    private LC704BinarySearch s;
+    private int[] nums;
 
-        t.done();
+    @BeforeEach
+    void setUp() {
+        s = new LC704BinarySearch();
+        nums = new int[]{-1, 0, 3, 5, 9, 12};
     }
+
+    @Test void targetInMiddle()         { assertEquals(4,  s.search(nums, 9));  }
+    @Test void targetAtFirstIndex()     { assertEquals(0,  s.search(nums, -1)); }
+    @Test void targetAtLastIndex()      { assertEquals(5,  s.search(nums, 12)); }
+    @Test void targetAbsentTooSmall()   { assertEquals(-1, s.search(nums, -5)); }
+    @Test void targetAbsentTooLarge()   { assertEquals(-1, s.search(nums, 20)); }
+    @Test void targetAbsentWithinRange(){ assertEquals(-1, s.search(nums, 2));  }
+    @Test void singleElementFound()     { assertEquals(0,  s.search(new int[]{5}, 5));  }
+    @Test void singleElementNotFound()  { assertEquals(-1, s.search(new int[]{5}, 3));  }
+    @Test void emptyArray()             { assertEquals(-1, s.search(new int[]{}, 1));   }
 }

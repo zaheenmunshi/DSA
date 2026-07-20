@@ -1,25 +1,33 @@
 package tests.LinkedList;
 
 import DS.LinkedLists.LC19RemoveNthNodeFromEnd;
-import tests.TestSupport;
+import DS.LinkedLists.Helper.ListNode;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-/** Tests for {@link LC19RemoveNthNodeFromEnd} (LeetCode 19). */
-public class LC19RemoveNthNodeFromEndTest {
-    public static void main(String[] args) {
-        TestSupport t = new TestSupport("LC19 Remove Nth Node From End");
-        LC19RemoveNthNodeFromEnd s = new LC19RemoveNthNodeFromEnd();
+class LC19RemoveNthNodeFromEndTest {
 
-        t.checkEquals("[1,2,3,4,5], n=2 -> [1,2,3,5]", new int[]{1, 2, 3, 5},
-                TestSupport.toArray(s.removeNthFromEnd(TestSupport.buildList(1, 2, 3, 4, 5), 2)));
-        t.checkEquals("[1], n=1 -> []", new int[]{},
-                TestSupport.toArray(s.removeNthFromEnd(TestSupport.buildList(1), 1)));
-        t.checkEquals("[1,2], n=1 -> [1] (remove last)", new int[]{1},
-                TestSupport.toArray(s.removeNthFromEnd(TestSupport.buildList(1, 2), 1)));
-        t.checkEquals("[1,2], n=2 -> [2] (remove head)", new int[]{2},
-                TestSupport.toArray(s.removeNthFromEnd(TestSupport.buildList(1, 2), 2)));
-        t.checkEquals("[1,2,3], n=3 -> [2,3] (remove head)", new int[]{2, 3},
-                TestSupport.toArray(s.removeNthFromEnd(TestSupport.buildList(1, 2, 3), 3)));
+    private LC19RemoveNthNodeFromEnd s;
 
-        t.done();
+    @BeforeEach
+    void setUp() { s = new LC19RemoveNthNodeFromEnd(); }
+
+    @Test void removeSecondFromEnd()  { assertArrayEquals(new int[]{1,2,3,5}, toArr(s.removeNthFromEnd(build(1,2,3,4,5), 2))); }
+    @Test void removeSingleNode()     { assertArrayEquals(new int[]{},        toArr(s.removeNthFromEnd(build(1), 1)));          }
+    @Test void removeLastNode()       { assertArrayEquals(new int[]{1},       toArr(s.removeNthFromEnd(build(1,2), 1)));        }
+    @Test void removeHead()           { assertArrayEquals(new int[]{2},       toArr(s.removeNthFromEnd(build(1,2), 2)));        }
+    @Test void removeHeadOfThree()    { assertArrayEquals(new int[]{2,3},     toArr(s.removeNthFromEnd(build(1,2,3), 3)));      }
+
+    private static ListNode build(int... vals) {
+        ListNode dummy = new ListNode(0), tail = dummy;
+        for (int v : vals) { tail.next = new ListNode(v); tail = tail.next; }
+        return dummy.next;
+    }
+
+    private static int[] toArr(ListNode head) {
+        java.util.List<Integer> out = new java.util.ArrayList<>();
+        for (ListNode c = head; c != null; c = c.next) out.add(c.val);
+        return out.stream().mapToInt(Integer::intValue).toArray();
     }
 }

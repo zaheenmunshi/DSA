@@ -1,23 +1,26 @@
 package tests.BinarySearch;
 
 import DS.BinarySearch.LC35SearchInsertPosition;
-import tests.TestSupport;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-/** Tests for {@link LC35SearchInsertPosition} (LeetCode 35). */
-public class LC35SearchInsertPositionTest {
-    public static void main(String[] args) {
-        TestSupport t = new TestSupport("LC35 Search Insert Position");
-        LC35SearchInsertPosition s = new LC35SearchInsertPosition();
+class LC35SearchInsertPositionTest {
 
-        int[] nums = {1, 3, 5, 6};
-        t.checkEquals("target present", 2, s.searchInsert(nums, 5));
-        t.checkEquals("insert in middle", 1, s.searchInsert(nums, 2));
-        t.checkEquals("insert at front", 0, s.searchInsert(nums, 0));
-        t.checkEquals("insert at end", 4, s.searchInsert(nums, 7));
-        t.checkEquals("target at first index", 0, s.searchInsert(nums, 1));
-        t.checkEquals("target at last index", 3, s.searchInsert(nums, 6));
-        t.checkEquals("empty array", 0, s.searchInsert(new int[]{}, 5));
+    private LC35SearchInsertPosition s;
+    private int[] nums;
 
-        t.done();
+    @BeforeEach
+    void setUp() {
+        s = new LC35SearchInsertPosition();
+        nums = new int[]{1, 3, 5, 6};
     }
+
+    @Test void targetPresent()       { assertEquals(2, s.searchInsert(nums, 5)); }
+    @Test void insertInMiddle()      { assertEquals(1, s.searchInsert(nums, 2)); }
+    @Test void insertAtFront()       { assertEquals(0, s.searchInsert(nums, 0)); }
+    @Test void insertAtEnd()         { assertEquals(4, s.searchInsert(nums, 7)); }
+    @Test void targetAtFirstIndex()  { assertEquals(0, s.searchInsert(nums, 1)); }
+    @Test void targetAtLastIndex()   { assertEquals(3, s.searchInsert(nums, 6)); }
+    @Test void emptyArray()          { assertEquals(0, s.searchInsert(new int[]{}, 5)); }
 }

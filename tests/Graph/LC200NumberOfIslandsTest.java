@@ -1,53 +1,61 @@
 package tests.Graph;
 
 import DS.Graph.LC200NumberOfIslands;
-import tests.TestSupport;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-/** Tests for {@link LC200NumberOfIslands} (LeetCode 200). */
-public class LC200NumberOfIslandsTest {
-    public static void main(String[] args) {
-        TestSupport t = new TestSupport("LC200 Number of Islands");
-        LC200NumberOfIslands s = new LC200NumberOfIslands();
+class LC200NumberOfIslandsTest {
 
-        t.checkEquals("null grid", 0, s.numIslands(null));
-        t.checkEquals("empty grid", 0, s.numIslands(new char[][]{}));
+    private LC200NumberOfIslands s;
 
-        t.checkEquals("all water", 0, s.numIslands(new char[][]{
+    @BeforeEach
+    void setUp() { s = new LC200NumberOfIslands(); }
+
+    @Test void nullGrid()    { assertEquals(0, s.numIslands(null)); }
+    @Test void emptyGrid()   { assertEquals(0, s.numIslands(new char[][]{})); }
+
+    @Test void allWater() {
+        assertEquals(0, s.numIslands(new char[][]{
             {'0','0','0'},
             {'0','0','0'}
         }));
+    }
 
-        t.checkEquals("all land = 1 island", 1, s.numIslands(new char[][]{
+    @Test void allLand() {
+        assertEquals(1, s.numIslands(new char[][]{
             {'1','1','1'},
             {'1','1','1'}
         }));
+    }
 
-        // LeetCode example 1 -> 1
-        t.checkEquals("example 1: one large island", 1, s.numIslands(new char[][]{
+    @Test void exampleOne() {
+        assertEquals(1, s.numIslands(new char[][]{
             {'1','1','1','1','0'},
             {'1','1','0','1','0'},
             {'1','1','0','0','0'},
             {'0','0','0','0','0'}
         }));
+    }
 
-        // LeetCode example 2 -> 3
-        t.checkEquals("example 2: three islands", 3, s.numIslands(new char[][]{
+    @Test void exampleTwo() {
+        assertEquals(3, s.numIslands(new char[][]{
             {'1','1','0','0','0'},
             {'1','1','0','0','0'},
             {'0','0','1','0','0'},
             {'0','0','0','1','1'}
         }));
+    }
 
-        t.checkEquals("single land cell", 1, s.numIslands(new char[][]{{'1'}}));
-        t.checkEquals("single water cell", 0, s.numIslands(new char[][]{{'0'}}));
+    @Test void singleLandCell()  { assertEquals(1, s.numIslands(new char[][]{{'1'}})); }
+    @Test void singleWaterCell() { assertEquals(0, s.numIslands(new char[][]{{'0'}})); }
 
-        // Diagonal cells are NOT connected — 4 corners + 1 centre = 5 islands
-        t.checkEquals("diagonal cells are separate islands", 5, s.numIslands(new char[][]{
+    @Test void diagonalCellsAreSeparate() {
+        // Diagonals are not connected — 4 corners + 1 centre = 5 islands
+        assertEquals(5, s.numIslands(new char[][]{
             {'1','0','1'},
             {'0','1','0'},
             {'1','0','1'}
         }));
-
-        t.done();
     }
 }

@@ -1,26 +1,41 @@
 package tests.LinkedList;
 
 import DS.LinkedLists.LC141LinkedListCycle;
-import tests.TestSupport;
+import DS.LinkedLists.Helper.ListNode;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-/** Tests for {@link LC141LinkedListCycle} (LeetCode 141). */
-public class LC141LinkedListCycleTest {
-    public static void main(String[] args) {
-        TestSupport t = new TestSupport("LC141 Linked List Cycle");
-        LC141LinkedListCycle s = new LC141LinkedListCycle();
+class LC141LinkedListCycleTest {
 
-        t.checkEquals("empty list", false, s.hasCycle(null));
-        t.checkEquals("single node, no cycle", false, s.hasCycle(TestSupport.buildList(1)));
-        t.checkEquals("single node, self cycle", true,
-                s.hasCycle(TestSupport.buildListWithCycle(new int[]{1}, 0)));
-        t.checkEquals("two nodes, no cycle", false, s.hasCycle(TestSupport.buildList(1, 2)));
-        t.checkEquals("two nodes, cycle to head", true,
-                s.hasCycle(TestSupport.buildListWithCycle(new int[]{1, 2}, 0)));
-        t.checkEquals("longer list, no cycle", false,
-                s.hasCycle(TestSupport.buildList(1, 2, 3, 4, 5)));
-        t.checkEquals("longer list, cycle in middle [3,2,0,-4] pos=1", true,
-                s.hasCycle(TestSupport.buildListWithCycle(new int[]{3, 2, 0, -4}, 1)));
+    private LC141LinkedListCycle s;
 
-        t.done();
+    @BeforeEach
+    void setUp() { s = new LC141LinkedListCycle(); }
+
+    @Test void emptyList()              { assertFalse(s.hasCycle(null)); }
+    @Test void singleNodeNoCycle()      { assertFalse(s.hasCycle(build(1))); }
+    @Test void singleNodeSelfCycle()    { assertTrue(s.hasCycle(buildCycle(new int[]{1}, 0))); }
+    @Test void twoNodesNoCycle()        { assertFalse(s.hasCycle(build(1, 2))); }
+    @Test void twoNodesCycleToHead()    { assertTrue(s.hasCycle(buildCycle(new int[]{1, 2}, 0))); }
+    @Test void longerListNoCycle()      { assertFalse(s.hasCycle(build(1, 2, 3, 4, 5))); }
+    @Test void longerListCycleMiddle()  { assertTrue(s.hasCycle(buildCycle(new int[]{3, 2, 0, -4}, 1))); }
+
+    // ---- helpers ----
+
+    private static ListNode build(int... vals) {
+        ListNode dummy = new ListNode(0), tail = dummy;
+        for (int v : vals) { tail.next = new ListNode(v); tail = tail.next; }
+        return dummy.next;
+    }
+
+    private static ListNode buildCycle(int[] vals, int pos) {
+        ListNode dummy = new ListNode(0), tail = dummy, target = null;
+        for (int i = 0; i < vals.length; i++) {
+            tail.next = new ListNode(vals[i]); tail = tail.next;
+            if (i == pos) target = tail;
+        }
+        tail.next = target;
+        return dummy.next;
     }
 }

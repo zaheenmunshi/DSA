@@ -66,13 +66,22 @@ Shared node types used by the LinkedList solutions (package `DS.LinkedLists.Help
 
 ## Compile & run
 
-From the repo root (`DSA/`), compile all packages with:
+Tests use **JUnit 5**. Before running tests for the first time, copy the
+required JARs into `lib/` (they ship with the
+[VS Code Java Test Runner](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test)
+extension, or download from [junit.org](https://junit.org/junit5/)):
 
-```bash
-javac DS/LinkedLists/*.java DS/LinkedLists/Helper/*.java DS/BinarySearch/*.java DS/Graph/*.java
+```
+lib/
+├── junit-jupiter-api.jar
+├── junit-jupiter-engine.jar
+├── junit-platform-commons.jar
+├── junit-platform-engine.jar
+├── junit-platform-launcher.jar
+└── opentest4j.jar
 ```
 
-To run the full test suite:
+Then run the full suite from the repo root:
 
 ```bash
 ./run_tests.sh

@@ -10,7 +10,8 @@ import DS.LinkedLists.Helper.ListNode;
  *
  * @see <a href="https://leetcode.com/problems/middle-of-the-linked-list/">Problem 876</a>
  */
-public class MiddleOfLinkedList {
+public class LC876MiddleOfLinkedList {
+
     /**
      * Finds the middle node with the fast/slow pointer technique: the fast
      * pointer moves two steps per iteration and the slow pointer one, so when

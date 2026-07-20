@@ -20,7 +20,6 @@ rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 
 echo "Compiling sources and tests..."
-# All Java sources: solutions, helpers, and tests.
 SOURCES=$(find DS tests -name '*.java')
 if ! javac -d "$BUILD_DIR" $SOURCES; then
     echo "Compilation failed."
@@ -31,8 +30,13 @@ echo "Running test suites..."
 echo
 
 overall=0
-for test_file in tests/*Test.java; do
-    class_name="tests.$(basename "$test_file" .java)"
+for test_file in tests/**/*Test.java tests/*Test.java; do
+    [ -f "$test_file" ] || continue
+    # Derive fully-qualified class name from path: tests/BinarySearch/LC704BinarySearchTest.java
+    # -> tests.BinarySearch.LC704BinarySearchTest
+    rel="${test_file#tests/}"          # BinarySearch/LC704BinarySearchTest.java
+    rel="${rel%.java}"                 # BinarySearch/LC704BinarySearchTest
+    class_name="tests.${rel//\//.}"   # tests.BinarySearch.LC704BinarySearchTest
     if ! java -cp "$BUILD_DIR" "$class_name"; then
         overall=1
     fi

@@ -1,12 +1,13 @@
-package tests;
+package tests.BinarySearch;
 
-import DS.BinarySearch.ValidPerfectSquare;
+import DS.BinarySearch.LC367ValidPerfectSquare;
+import tests.TestSupport;
 
-/** Tests for {@link ValidPerfectSquare} (LeetCode 367). */
-public class ValidPerfectSquareTest {
+/** Tests for {@link LC367ValidPerfectSquare} (LeetCode 367). */
+public class LC367ValidPerfectSquareTest {
     public static void main(String[] args) {
-        TestSupport t = new TestSupport("ValidPerfectSquare (LC 367)");
-        ValidPerfectSquare s = new ValidPerfectSquare();
+        TestSupport t = new TestSupport("LC367 Valid Perfect Square");
+        LC367ValidPerfectSquare s = new LC367ValidPerfectSquare();
 
         t.checkEquals("1 is a perfect square", true, s.isPerfectSquare(1));
         t.checkEquals("4 is a perfect square", true, s.isPerfectSquare(4));

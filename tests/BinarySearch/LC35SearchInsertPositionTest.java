@@ -1,12 +1,13 @@
-package tests;
+package tests.BinarySearch;
 
-import DS.BinarySearch.SearchInsertPosition;
+import DS.BinarySearch.LC35SearchInsertPosition;
+import tests.TestSupport;
 
-/** Tests for {@link SearchInsertPosition} (LeetCode 35). */
-public class SearchInsertPositionTest {
+/** Tests for {@link LC35SearchInsertPosition} (LeetCode 35). */
+public class LC35SearchInsertPositionTest {
     public static void main(String[] args) {
-        TestSupport t = new TestSupport("SearchInsertPosition (LC 35)");
-        SearchInsertPosition s = new SearchInsertPosition();
+        TestSupport t = new TestSupport("LC35 Search Insert Position");
+        LC35SearchInsertPosition s = new LC35SearchInsertPosition();
 
         int[] nums = {1, 3, 5, 6};
         t.checkEquals("target present", 2, s.searchInsert(nums, 5));

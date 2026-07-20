@@ -1,12 +1,13 @@
-package tests;
+package tests.LinkedList;
 
-import DS.LinkedLists.LinkedListCycle;
+import DS.LinkedLists.LC141LinkedListCycle;
+import tests.TestSupport;
 
-/** Tests for {@link LinkedListCycle} (LeetCode 141). */
-public class LinkedListCycleTest {
+/** Tests for {@link LC141LinkedListCycle} (LeetCode 141). */
+public class LC141LinkedListCycleTest {
     public static void main(String[] args) {
-        TestSupport t = new TestSupport("LinkedListCycle (LC 141)");
-        LinkedListCycle s = new LinkedListCycle();
+        TestSupport t = new TestSupport("LC141 Linked List Cycle");
+        LC141LinkedListCycle s = new LC141LinkedListCycle();
 
         t.checkEquals("empty list", false, s.hasCycle(null));
         t.checkEquals("single node, no cycle", false, s.hasCycle(TestSupport.buildList(1)));

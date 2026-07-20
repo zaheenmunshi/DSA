@@ -13,7 +13,8 @@ import DS.LinkedLists.Helper.Node;
  *
  * @see <a href="https://leetcode.com/problems/copy-list-with-random-pointer/">Problem 138</a>
  */
-public class CopyListWithRandomPointer {
+public class LC138CopyListWithRandomPointer {
+
     /**
      * Deep-copies the list in O(1) extra space by interweaving the clones with
      * the originals:
@@ -59,9 +60,9 @@ public class CopyListWithRandomPointer {
         Node copyTail = dummy;
         curr = head;
         while (curr != null) {
-            copyTail.next = curr.next;   // detach the clone into the copy list
+            copyTail.next = curr.next;
             copyTail = copyTail.next;
-            curr.next = curr.next.next;  // restore the original list
+            curr.next = curr.next.next;
             curr = curr.next;
         }
 

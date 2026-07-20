@@ -10,7 +10,8 @@ import DS.LinkedLists.Helper.ListNode;
  *
  * @see <a href="https://leetcode.com/problems/linked-list-cycle/">Problem 141</a>
  */
-public class LinkedListCycle {
+public class LC141LinkedListCycle {
+
     /**
      * Detects a cycle using Floyd's tortoise-and-hare algorithm: a slow pointer
      * advances one node at a time and a fast pointer two; if they ever meet, the

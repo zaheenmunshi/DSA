@@ -10,63 +10,71 @@ added.
 ```
 DSA/
 ├── README.md
-└── DS/
-    ├── LinkedLists/
-    │   ├── LinkedListCycle.java            # LC 141
-    │   ├── MiddleOfLinkedList.java         # LC 876
-    │   ├── RemoveNthNodeFromEnd.java       # LC 19
-    │   ├── CopyListWithRandomPointer.java  # LC 138
-    │   └── Helper/
-    │       ├── ListNode.java               # singly linked list node (val, next)
-    │       └── Node.java                   # node with an extra random pointer
-    └── BinarySearch/
-        ├── BinarySearch.java               # LC 704
-        ├── SearchInsertPosition.java       # LC 35
-        └── ValidPerfectSquare.java         # LC 367
+├── run_tests.sh
+├── DS/
+│   ├── BinarySearch/
+│   │   ├── LC35SearchInsertPosition.java
+│   │   ├── LC367ValidPerfectSquare.java
+│   │   └── LC704BinarySearch.java
+│   ├── Graph/
+│   │   └── LC1971FindIfPathExistsInGraph.java
+│   └── LinkedLists/
+│       ├── LC19RemoveNthNodeFromEnd.java
+│       ├── LC138CopyListWithRandomPointer.java
+│       ├── LC141LinkedListCycle.java
+│       ├── LC876MiddleOfLinkedList.java
+│       └── Helper/
+│           ├── ListNode.java
+│           └── Node.java
+└── tests/
+    ├── TestSupport.java
+    ├── BinarySearch/
+    │   ├── LC35SearchInsertPositionTest.java
+    │   ├── LC367ValidPerfectSquareTest.java
+    │   └── LC704BinarySearchTest.java
+    ├── Graph/
+    │   └── LC1971FindIfPathExistsInGraphTest.java
+    └── LinkedList/
+        ├── LC19RemoveNthNodeFromEndTest.java
+        ├── LC138CopyListWithRandomPointerTest.java
+        ├── LC141LinkedListCycleTest.java
+        └── LC876MiddleOfLinkedListTest.java
 ```
-
-The Java source root is the `DSA/` directory (classes use the `DS.LinkedLists`
-and `DS.BinarySearch` packages).
 
 ## Solutions index
 
-| #   | Problem                                                                                  | Difficulty | Topic         | File                                                              | Approach                          | Time      | Space | Status         |
-| --- | ---------------------------------------------------------------------------------------- | ---------- | ------------- | ---------------------------------------------------------------- | --------------------------------- | --------- | ----- | -------------- |
-| 19  | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Medium     | Linked List   | [RemoveNthNodeFromEnd.java](DS/LinkedLists/RemoveNthNodeFromEnd.java)             | Two pointers + dummy node         | O(n)      | O(1)  | ✅ Done        |
-| 35  | [Search Insert Position](https://leetcode.com/problems/search-insert-position/)                     | Easy       | Binary Search | [SearchInsertPosition.java](DS/BinarySearch/SearchInsertPosition.java)          | Binary search; return `left` on miss | O(log n) | O(1)  | ✅ Done        |
-| 138 | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)       | Medium     | Linked List   | [CopyListWithRandomPointer.java](DS/LinkedLists/CopyListWithRandomPointer.java) | Interweave clones, then split     | O(n)      | O(1)  | ✅ Done        |
-| 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)                               | Easy       | Linked List   | [LinkedListCycle.java](DS/LinkedLists/LinkedListCycle.java)                     | Floyd's cycle detection (fast/slow) | O(n)    | O(1)  | ✅ Done        |
-| 367 | [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)                         | Easy       | Binary Search | [ValidPerfectSquare.java](DS/BinarySearch/ValidPerfectSquare.java)              | Binary search on `[1, num/2]`     | O(log n)  | O(1)  | ✅ Done        |
-| 704 | [Binary Search](https://leetcode.com/problems/binary-search/)                                       | Easy       | Binary Search | [BinarySearch.java](DS/BinarySearch/BinarySearch.java)                          | Classic binary search             | O(log n)  | O(1)  | ✅ Done        |
-| 876 | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)               | Easy       | Linked List   | [MiddleOfLinkedList.java](DS/LinkedLists/MiddleOfLinkedList.java)               | Fast/slow pointers                | O(n)      | O(1)  | ✅ Done        |
+| #    | Problem                                                                                                         | Difficulty | Topic         | File                                                                                              | Approach                            | Time       | Space  | Status   |
+|------|-----------------------------------------------------------------------------------------------------------------|------------|---------------|---------------------------------------------------------------------------------------------------|-------------------------------------|------------|--------|----------|
+| 19   | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)            | Medium     | Linked List   | [LC19RemoveNthNodeFromEnd.java](DS/LinkedLists/LC19RemoveNthNodeFromEnd.java)                    | Two pointers + dummy node           | O(n)       | O(1)   | ✅ Done  |
+| 35   | [Search Insert Position](https://leetcode.com/problems/search-insert-position/)                                 | Easy       | Binary Search | [LC35SearchInsertPosition.java](DS/BinarySearch/LC35SearchInsertPosition.java)                   | Binary search; return `left` on miss | O(log n)  | O(1)   | ✅ Done  |
+| 138  | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)                   | Medium     | Linked List   | [LC138CopyListWithRandomPointer.java](DS/LinkedLists/LC138CopyListWithRandomPointer.java)        | Interweave clones, then split       | O(n)       | O(1)   | ✅ Done  |
+| 141  | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)                                           | Easy       | Linked List   | [LC141LinkedListCycle.java](DS/LinkedLists/LC141LinkedListCycle.java)                            | Floyd's cycle detection (fast/slow) | O(n)       | O(1)   | ✅ Done  |
+| 367  | [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)                                     | Easy       | Binary Search | [LC367ValidPerfectSquare.java](DS/BinarySearch/LC367ValidPerfectSquare.java)                     | Binary search on `[1, num/2]`       | O(log n)   | O(1)   | ✅ Done  |
+| 704  | [Binary Search](https://leetcode.com/problems/binary-search/)                                                   | Easy       | Binary Search | [LC704BinarySearch.java](DS/BinarySearch/LC704BinarySearch.java)                                 | Classic binary search               | O(log n)   | O(1)   | ✅ Done  |
+| 876  | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)                           | Easy       | Linked List   | [LC876MiddleOfLinkedList.java](DS/LinkedLists/LC876MiddleOfLinkedList.java)                      | Fast/slow pointers                  | O(n)       | O(1)   | ✅ Done  |
+| 1971 | [Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/)                    | Easy       | Graph         | [LC1971FindIfPathExistsInGraph.java](DS/Graph/LC1971FindIfPathExistsInGraph.java)                | BFS from source                     | O(V+E)     | O(V+E) | ✅ Done  |
 
 ## Helper classes
 
-Shared node types used by the solutions (package `DS.LinkedLists.Helper`):
+Shared node types used by the LinkedList solutions (package `DS.LinkedLists.Helper`):
 
 - **`ListNode`** — standard singly linked list node with `val` and `next`.
-- **`Node`** — singly linked list node with an additional `random` pointer, used
-  by problems like *Copy List with Random Pointer*.
+- **`Node`** — singly linked list node with an additional `random` pointer, used by LC 138.
 
 ## Compile & run
 
-From the source root (`DSA/`), compile all packages with:
+From the repo root (`DSA/`), compile all packages with:
 
 ```bash
-javac DS/LinkedLists/*.java DS/LinkedLists/Helper/*.java DS/BinarySearch/*.java
+javac DS/LinkedLists/*.java DS/LinkedLists/Helper/*.java DS/BinarySearch/*.java DS/Graph/*.java
 ```
 
-> Note: these are solution classes (no `main` method) — they mirror the method
-> signatures LeetCode expects. To exercise them locally, add a small driver class
-> with a `main` that builds a list and calls the method, or paste the solution
-> into the LeetCode editor.
+To run the full test suite:
+
+```bash
+./run_tests.sh
+```
 
 ## Roadmap
 
-More topics will be added as separate folders under `DS/` (e.g. arrays, stacks,
-trees, graphs), each following the same one-file-per-problem convention.
-
-## Note
-
-The documentation in this repository — this README and the JavaDoc comments in
-the source files — was generated with the help of AI.
+More topics will be added as separate folders under `DS/` (e.g. arrays, stacks, trees), each following the same one-file-per-problem convention.

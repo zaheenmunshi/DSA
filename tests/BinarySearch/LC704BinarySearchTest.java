@@ -1,12 +1,13 @@
-package tests;
+package tests.BinarySearch;
 
-import DS.BinarySearch.BinarySearch;
+import DS.BinarySearch.LC704BinarySearch;
+import tests.TestSupport;
 
-/** Tests for {@link BinarySearch} (LeetCode 704). */
-public class BinarySearchTest {
+/** Tests for {@link LC704BinarySearch} (LeetCode 704). */
+public class LC704BinarySearchTest {
     public static void main(String[] args) {
-        TestSupport t = new TestSupport("BinarySearch (LC 704)");
-        BinarySearch s = new BinarySearch();
+        TestSupport t = new TestSupport("LC704 Binary Search");
+        LC704BinarySearch s = new LC704BinarySearch();
 
         int[] nums = {-1, 0, 3, 5, 9, 12};
         t.checkEquals("target present (middle)", 4, s.search(nums, 9));
